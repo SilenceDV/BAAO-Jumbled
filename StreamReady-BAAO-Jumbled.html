@@ -707,11 +707,10 @@ function startTimer(){
         if (timer <= 0) {
             clearInterval(timerInterval); // Stop the timer
             playSound(failSound);        // Play fail sound
+            showFailScreen();   // show streak BEFORE reset
             streak = 0;                  // Reset streak
             document.getElementById("streak").innerText = "Streak: " + streak;
 
-            // Show the fail/restart screen
-            showFailScreen();
         }
      }
    }, 1000); // Run this function every 1 second
